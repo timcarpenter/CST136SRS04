@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Range.h"
 
 namespace GPS
 {
@@ -28,6 +28,9 @@ namespace GPS
 			  const minute_type minute, 
 			  const second_type second);
 
+		Angle(const double degree);
+
+		double get_degree() const; 
 
 	};
 }

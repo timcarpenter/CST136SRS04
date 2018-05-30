@@ -19,6 +19,17 @@ namespace GPS
 			     const Latitude latitude, 
 			     const Longitude longitude);
 
+		Location(const Location &location);
+
+		Location & operator= (const Location &);
+
+		double distance_to_(const Location &dest); 
+
+		double get_lat() const;
+		double get_long() const;
+		std::string get_name() const; 
+
 	};
+
 }
 

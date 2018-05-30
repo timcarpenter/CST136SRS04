@@ -15,7 +15,12 @@ namespace GPS
 			      const minute_type minute, 
 			      const second_type second);
 
+		double get_degree() const;
 
+
+	private:
+
+		Cardinal cardinal_;
 	};
 }
 

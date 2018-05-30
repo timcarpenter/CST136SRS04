@@ -1,26 +1,81 @@
 #include "stdafx.h"
 #include "Location.h"
+#include <cmath>
 #include <array>
 
+namespace GPS {
+	Location::Location(const std::string name, const Latitude latitude, const Longitude longitude)
+		: name_(name), latitude_(latitude), longitude_(longitude)
+	{
 
-std::array<GPS::Location, 12> island
-{
-	GPS::Location{ "Faichuk Islands",	GPS::Latitude{ GPS::Latitude::Cardinal::N, 7, 21, 8 },	GPS::Longitude{ GPS::Longitude::Cardinal::E, 151, 36, 30 } },
-	GPS::Location{ "Hawaii",			GPS::Latitude{ GPS::Latitude::Cardinal::N, 21, 18, 41 },GPS::Longitude{ GPS::Longitude::Cardinal::W, 157, 47, 47 } },
-	GPS::Location{ "Mariana Islands",	GPS::Latitude{ GPS::Latitude::Cardinal::N, 17, 0, 0 },	GPS::Longitude{ GPS::Longitude::Cardinal::E, 146, 0 , 0 } },
-	GPS::Location{ "Johnston Atoll",	GPS::Latitude{ GPS::Latitude::Cardinal::N, 16, 44, 13 },GPS::Longitude{ GPS::Longitude::Cardinal::W, 169, 31, 26 } },
-	GPS::Location{ "Kosrae",			GPS::Latitude{ GPS::Latitude::Cardinal::N, 5, 19, 0 },	GPS::Longitude{ GPS::Longitude::Cardinal::E, 162, 59, 0 } },
-	GPS::Location{ "Falalop",			GPS::Latitude{ GPS::Latitude::Cardinal::N, 10, 1, 14 }, GPS::Longitude{ GPS::Longitude::Cardinal::E, 139, 47, 23 } },
-	GPS::Location{ "Guam",				GPS::Latitude{ GPS::Latitude::Cardinal::N, 13, 30, 0 },	GPS::Longitude{ GPS::Longitude::Cardinal::E, 144, 48, 0 } },
-	GPS::Location{ "Pohnpei",			GPS::Latitude{ GPS::Latitude::Cardinal::N, 6, 51, 0 },	GPS::Longitude{ GPS::Longitude::Cardinal::E, 158, 13, 0 } },
-	GPS::Location{ "Marshall Islands",	GPS::Latitude{ GPS::Latitude::Cardinal::N, 7, 7	, 0 },	GPS::Longitude{ GPS::Longitude::Cardinal::E, 171, 4 , 0 } },
-	GPS::Location{ "Yap",				GPS::Latitude{ GPS::Latitude::Cardinal::N, 9, 32, 0 },	GPS::Longitude{ GPS::Longitude::Cardinal::E, 138, 7 , 0 } },
-	GPS::Location{ "Wake Island",		GPS::Latitude{ GPS::Latitude::Cardinal::N, 19, 17, 43 },GPS::Longitude{ GPS::Longitude::Cardinal::E, 166, 37, 52 } },
-	GPS::Location{ "New Zealand",		GPS::Latitude{ GPS::Latitude::Cardinal::S, 41, 17, 0 },	GPS::Longitude{ GPS::Longitude::Cardinal::E, 174, 27, 0 } }
+	}
 
-	
-	/// ... In order as shown in the below table....
-};
+	Location::Location(const Location& location)
+		: name_(location.name_), latitude_(location.latitude_), longitude_(location.longitude_)
+	{
+		
+	}
+
+	Location& Location::operator=(const Location& other)
+	{
+		if (&other == this)
+			return *this;
+
+		return *this;
+
+	}
+
+	double Location::distance_to_(const Location &dest)
+	{
+
+		double PI = 4.0*atan(1.0);
+
+		//main code inside the class
+		double dlat1 = dest.latitude_.get_degree() * (PI / 180);
+
+		double dlong1 = dest.longitude_.get_degree() * (PI / 180);
+		double dlat2 = latitude_.get_degree() * (PI / 180);
+		double dlong2 = longitude_.get_degree() * (PI / 180);
+
+		double dLong = dlong1 - dlong2;
+		double dLat = dlat1 - dlat2;
+
+		double aHarv = pow(sin(dLat / 2.0), 2.0) + cos(dlat1)*cos(dlat2)*pow(sin(dLong / 2), 2);
+		double cHarv = 2 * atan2(sqrt(aHarv), sqrt(1.0 - aHarv));
+		//earth's radius from wikipedia varies between 6,356.750 km — 6,378.135 km (˜3,949.901 — 3,963.189 miles)
+		//The IUGG value for the equatorial radius of the Earth is 6378.137 km (3963.19 mile)
+		const double earth = 6378;  //In KM
+		double distance = earth * cHarv;
+
+		return distance;
+	}
+
+	std::string Location::get_name() const
+	{
+
+		return name_;
+	}
+
+	double Location::get_lat() const
+	{
+
+		return latitude_.get_degree();
+	}
+
+	double Location::get_long() const
+	{
+
+		return longitude_.get_degree();
+	}
+
+
+
+
+
+}
+
+
+
 
 /*
 | Island Name		| Lat Deg	| Lat Min	| Lat Sec	| N / S | Lng Deg	| Lng Min	| Lng Sec	| E / W |
