@@ -7,8 +7,7 @@ namespace GPS
 { 
 
 Path::Path()
-{
-}
+	= default;
 
 	void Path::generate_northern_path(std::array<GPS::Location, 12> island)
 	{
@@ -22,7 +21,12 @@ Path::Path()
 
 	void Path::generate_western_path(std::array<GPS::Location, 12> island)
 	{
+		std::sort(island.begin(), island.end(), west_compare);
 
+		for (Location location : island)
+		{
+			std::cout << location.get_name() << std::endl;
+		}
 
 	}
 

@@ -11,12 +11,8 @@ namespace GPS
 
 		value_type value_;
 
-
-
 	public:
 		Range(const value_type value);
 
-
 	};
-
 }

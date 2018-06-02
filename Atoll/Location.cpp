@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Location.h"
 #include <cmath>
-#include <array>
 
 namespace GPS {
 	Location::Location(const std::string name, const Latitude latitude, const Longitude longitude)
@@ -10,13 +9,13 @@ namespace GPS {
 
 	}
 
-	Location::Location(const Location& location)
+	Location::Location(const Location &location)
 		: name_(location.name_), latitude_(location.latitude_), longitude_(location.longitude_)
 	{
 		
 	}
 
-	Location& Location::operator=(const Location& other)
+	Location &Location::operator=(const Location &other)
 	{
 		if (&other == this)
 			return *this;
@@ -27,12 +26,12 @@ namespace GPS {
 
 	double Location::distance_to_(const Location &dest)
 	{
+		// This calculation was pulled from codeproject.com --> see reference in report.md
 
 		double PI = 4.0*atan(1.0);
 
 		//main code inside the class
 		double dlat1 = dest.latitude_.get_degree() * (PI / 180);
-
 		double dlong1 = dest.longitude_.get_degree() * (PI / 180);
 		double dlat2 = latitude_.get_degree() * (PI / 180);
 		double dlong2 = longitude_.get_degree() * (PI / 180);
@@ -52,7 +51,6 @@ namespace GPS {
 
 	std::string Location::get_name() const
 	{
-
 		return name_;
 	}
 
@@ -67,10 +65,6 @@ namespace GPS {
 
 		return longitude_.get_degree();
 	}
-
-
-
-
 
 }
 

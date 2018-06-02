@@ -8,5 +8,4 @@ namespace GPS
 	{
 		value_ = value;
 	}
-
 }

@@ -4,7 +4,6 @@
 
 namespace GPS
 {
-
 	//double Latitude::get_value_()
 	//{
 	//
@@ -25,7 +24,6 @@ namespace GPS
 		{
 			angle = -angle;
 		}
-
 
 		return angle;
 	}

@@ -3,8 +3,6 @@
 
 namespace GPS
 {
-
-
 	//double Longitude::get_value_()
 	//{
 
@@ -25,7 +23,6 @@ namespace GPS
 		{
 			angle = -angle;
 		}
-
 
 		return angle; 
 	}
