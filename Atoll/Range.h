@@ -12,7 +12,11 @@ namespace GPS
 		value_type value_;
 
 	public:
+		//explicit Range(const value_type value);
 		Range(const value_type value);
 
+		int get_value() const { return value_; }
+		//void set_value(T value) { value_ = value; }
+		
 	};
 }

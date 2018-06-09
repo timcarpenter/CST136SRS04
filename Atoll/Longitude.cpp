@@ -15,9 +15,11 @@ namespace GPS
 
 	}
 
+
 	double Longitude::get_degree() const
 	{
-		double angle = Angle::get_degree();
+		
+		auto angle = Angle<-180, 180>::get_degree();
 
 		if(cardinal_ == Cardinal::W)
 		{

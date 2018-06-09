@@ -4,11 +4,6 @@
 
 namespace GPS
 {
-	//double Latitude::get_value_()
-	//{
-	//
-	//	return Angle::get_degree();
-	//}
 
 	Latitude::Latitude(const Cardinal cardinal, const degree_type degree, const minute_type minute, const second_type second)
 		: Angle(degree,minute,second),cardinal_(cardinal)
@@ -18,7 +13,7 @@ namespace GPS
 
 	double Latitude::get_degree() const
 	{
-		double angle = Angle::get_degree();
+		auto angle = Angle::get_degree();
 
 		if (cardinal_ == Cardinal::S)
 		{

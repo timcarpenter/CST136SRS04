@@ -37,4 +37,4 @@ Notes:
 
 - Algorithm for finding a path through data points
   The Standard Library pg. 325
-  search()?  find()?  sort()? 
+ sort()? 

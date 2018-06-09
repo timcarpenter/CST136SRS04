@@ -3,6 +3,9 @@
 
 namespace GPS
 {
+	double operator/(const Range<unsigned, 0, 60>& lhs, const int& rhs);
+
+
 	template<int min, int max>
 	class Angle
 	{
@@ -28,9 +31,11 @@ namespace GPS
 			  const minute_type minute, 
 			  const second_type second);
 
+		Angle();
+
 		Angle(const double degree);
 
-		double get_degree() const; 
+		double get_degree() const;
 
 	};
 }

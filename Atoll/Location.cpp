@@ -3,16 +3,16 @@
 #include <cmath>
 
 namespace GPS {
+
+
 	Location::Location(const std::string name, const Latitude latitude, const Longitude longitude)
 		: name_(name), latitude_(latitude), longitude_(longitude)
 	{
-
 	}
 
 	Location::Location(const Location &location)
 		: name_(location.name_), latitude_(location.latitude_), longitude_(location.longitude_)
 	{
-		
 	}
 
 	Location &Location::operator=(const Location &other)
@@ -21,7 +21,6 @@ namespace GPS {
 			return *this;
 
 		return *this;
-
 	}
 
 	double Location::distance_to_(const Location &dest)
@@ -68,24 +67,3 @@ namespace GPS {
 
 }
 
-
-
-
-/*
-| Island Name		| Lat Deg	| Lat Min	| Lat Sec	| N / S | Lng Deg	| Lng Min	| Lng Sec	| E / W |
-| ----------------	| ------ -	| ------ -	| ------ -	| -- -	| ------ -	| ------ -	| ------ -	| -- -	|
-| Faichuk Islands	| 7			| 21		| 8			| N		| 151		| 36		| 30		| E		|
-| Hawaii			| 21		| 18		| 41		| N		| 157		| 47		| 47		| W		|
-| Mariana Islands	| 17		| 0			| 0			| N		| 146		| 0			| 0			| E		|
-| Johnston Atoll	| 16		| 44		| 13		| N		| 169		| 31		| 26		| W		|
-| Kosrae			| 5			| 19		| 0			| N		| 162		| 59		| 0			| E		|
-| Falalop			| 10		| 1			| 14		| N		| 139		| 47		| 23		| E		|
-| Guam				| 13		| 30		| 0			| N		| 144		| 48		| 0			| E		|
-| Pohnpei			| 6			| 51		| 0			| N		| 158		| 13		| 0			| E		|
-| Marshall Islands	| 7			| 7			| 0			| N		| 171		| 4			| 0			| E		|
-| Yap				| 9			| 32		| 0			| N		| 138		| 7			| 0			| E		|
-| Wake Island		| 19		| 17		| 43		| N		| 166		| 37		| 52		| E		|
-| New Zealand		| 41		| 17		| 0			| S		| 174		| 27		| 0			| E		|
-
-
-*/

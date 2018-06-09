@@ -1,5 +1,6 @@
 #pragma once
 #include "Angle.h"
+#include "Range.h"
 
 namespace GPS
 {

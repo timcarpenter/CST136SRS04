@@ -1,42 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="GPS::Angle&lt;min, max&gt;" Collapsed="true">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+  <Class Name="GPS::Angle&lt;min, max&gt;">
+    <Position X="1.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAQBAAAAAAAAAAAAAAAAAAAAAAAIAAAIEAAAAAAAAA=</HashCode>
       <FileName>Angle.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GPS::Latitude" Collapsed="true">
-    <Position X="2.75" Y="1.75" Width="1.5" />
+  <Class Name="GPS::Latitude">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPS::Latitude::Cardinal" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Latitude.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAIAAAAAEAAAAAAAA=</HashCode>
       <FileName>Latitude.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GPS::Location" Collapsed="true">
-    <Position X="5.25" Y="0.5" Width="1.5" />
+  <Class Name="GPS::Location">
+    <Position X="5.25" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAACAAIAAAAACAgAAAAAAAAgAKAAIAA=</HashCode>
       <FileName>Location.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GPS::Longitude" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+  <Class Name="GPS::Longitude">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="GPS::Longitude::Cardinal" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Longitude.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAA=</HashCode>
       <FileName>Longitude.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GPS::Path" Collapsed="true">
-    <Position X="7" Y="0.5" Width="1.5" />
+  <Class Name="GPS::Path">
+    <Position X="7.5" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>IAgAAAAAAAAAAAIBAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>Path.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GPS::Range&lt;T, min, max&gt;" Collapsed="true">
-    <Position X="5.25" Y="1.5" Width="1.5" />
+  <Class Name="GPS::Range&lt;T, min, max&gt;">
+    <Position X="5.25" Y="3.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
       <FileName>Range.h</FileName>

@@ -6,7 +6,9 @@ namespace GPS
 {
 	class Path
 	{
+	private:
 
+		double distance_; 
 
 	public:
 		Path();
@@ -17,10 +19,5 @@ namespace GPS
 		static bool north_compare(const Location &a, const Location &b);
 
 	};
-
-
-
-
-
 
 }

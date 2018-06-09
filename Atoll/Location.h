@@ -3,6 +3,8 @@
 #include <string>
 #include "Latitude.h"
 #include "Longitude.h"
+#include "Range.h"
+#include "Angle.h"
 
 namespace GPS
 {
